@@ -32,7 +32,7 @@
     "href": "index.html",
     "title": "William Yanes",
     "section": "",
-    "text": "Transforming Data into Financial Strategy\nI am a highly organized Finance Professional with over **10 years of experience** bridging the gap between traditional **Financial Planning & Analysis (FP&A)** and modern **Data Science**.\nMy expertise lies in building robust financial models, ensuring internal controls (SOX/IFRS), and leveraging predictive modeling to drive strategic decision-making.\n\n\n\n\n\n\nOpen for Consulting\n\n\n\nI am currently accepting new projects for financial modeling and data analysis."
+    "text": "&lt;iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-W6R723MF\" height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&gt;&lt;/iframe&gt;\n\nTransforming Data into Financial Strategy\nI am a highly organized Finance Professional with over **10 years of experience** bridging the gap between traditional **Financial Planning & Analysis (FP&A)** and modern **Data Science**.\nMy expertise lies in building robust financial models, ensuring internal controls (SOX/IFRS), and leveraging predictive modeling to drive strategic decision-making.\n\n\n\n\n\n\nOpen for Consulting\n\n\n\nI am currently accepting new projects for financial modeling and data analysis."
   },
   {
     "objectID": "about.html",
@@ -42,18 +42,11 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "cv.html",
-    "href": "cv.html",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Master’s in Statistics and Data Science | Universidad El Salvador Completed 2025\nBusiness Engineering | Escuela Superior de Economía y Negocios (ESEN) January 2016"
-  },
-  {
     "objectID": "cv.html#education",
     "href": "cv.html#education",
     "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Master’s in Statistics and Data Science | Universidad El Salvador Completed 2025\nBusiness Engineering | Escuela Superior de Economía y Negocios (ESEN) January 2016"
+    "section": "Education",
+    "text": "Education\nMaster’s in Statistics and Data Science | Universidad El Salvador Completed 2025\nBusiness Engineering | Escuela Superior de Economía y Negocios (ESEN) January 2016"
   },
   {
     "objectID": "cv.html#professional-experience",
