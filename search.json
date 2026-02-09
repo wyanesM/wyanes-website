@@ -1,10 +1,31 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "services.html",
+    "href": "services.html",
+    "title": "Consulting Services",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "I help organizations bridge the gap between traditional finance and modern data science."
+  },
+  {
+    "objectID": "services.html#financial-planning-analysis-fpa",
+    "href": "services.html#financial-planning-analysis-fpa",
+    "title": "Consulting Services",
+    "section": "📊 Financial Planning & Analysis (FP&A)",
+    "text": "📊 Financial Planning & Analysis (FP&A)\nMove beyond static spreadsheets. * Dynamic Budgeting: Automated forecasting models using Python/R. * Variance Analysis: Deep-dive investigations into P&L deviations. * Unit Economics: Calculation of CAC, LTV, and Churn metrics."
+  },
+  {
+    "objectID": "services.html#process-automation",
+    "href": "services.html#process-automation",
+    "title": "Consulting Services",
+    "section": "🤖 Process Automation",
+    "text": "🤖 Process Automation\nReduce manual work and errors in your finance team. * Report Automation: Scripts to generate daily/weekly financial reports automatically. * Data Cleaning: Transforming messy raw data into analysis-ready formats."
+  },
+  {
+    "objectID": "services.html#business-intelligence",
+    "href": "services.html#business-intelligence",
+    "title": "Consulting Services",
+    "section": "📈 Business Intelligence",
+    "text": "📈 Business Intelligence\n\nDashboards: Custom Power BI or Tableau dashboards for executive decision-making.\nKPI Definition: Identifying and tracking the metrics that actually matter.\n\n\n\n\n\n\n\nLet’s Connect\n\n\n\nReady to upgrade your financial strategy? Email me to discuss a project."
   },
   {
     "objectID": "index.html",
@@ -12,5 +33,40 @@
     "title": "William Yanes",
     "section": "",
     "text": "Transforming Data into Financial Strategy\nI am a highly organized Finance Professional with over **10 years of experience** bridging the gap between traditional **Financial Planning & Analysis (FP&A)** and modern **Data Science**.\nMy expertise lies in building robust financial models, ensuring internal controls (SOX/IFRS), and leveraging predictive modeling to drive strategic decision-making.\n\n\n\n\n\n\nOpen for Consulting\n\n\n\nI am currently accepting new projects for financial modeling and data analysis."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Master’s in Statistics and Data Science | Universidad El Salvador Completed 2025\nBusiness Engineering | Escuela Superior de Economía y Negocios (ESEN) January 2016"
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Master’s in Statistics and Data Science | Universidad El Salvador Completed 2025\nBusiness Engineering | Escuela Superior de Economía y Negocios (ESEN) January 2016"
+  },
+  {
+    "objectID": "cv.html#professional-experience",
+    "href": "cv.html#professional-experience",
+    "title": "Curriculum Vitae",
+    "section": "Professional Experience",
+    "text": "Professional Experience\n\nOutsourcing Services International S.A de C.V\nFP&A Specialist | Nov 2025 - Present\n\nActing as a strategic partner to Executive Leadership, delivering robust financial statement projections.\nLeading the monthly performance review process to provide visibility into financial results.\nEnsuring the accuracy of complex financial models used for the company’s strategic roadmap.\n\n\n\nLifeMiles (Avianca Loyalty)\nFP&A Manager (Acting) | Aug 2025 - Nov 2025\n\nOversaw financial performance of the Loyalty segment and delivered detailed variance analysis.\nLed the budgeting and forecasting process, coordinating cross-functional inputs.\n\nFinancial Control Leader | Apr 2020 - July 2025\n\nManaged the “Breakage” revenue driver (~16% of revenue), a critical SOX control.\nModeled sensitivity scenarios where a 1 ppt deviation could impact annual revenue by ~$27M.\nReduced accounting errors by 10%, generating annual savings of $900K+.\n\nFinancial Analyst | Sept 2016 - Mar 2020\n\nMastered corporate finance fundamentals, executing rigorous P&L analysis.\nDeveloped dynamic financial models to support monthly forecasting."
+  },
+  {
+    "objectID": "cv.html#technical-skills",
+    "href": "cv.html#technical-skills",
+    "title": "Curriculum Vitae",
+    "section": "Technical Skills",
+    "text": "Technical Skills\n\nProgramming: Python (Pandas, Scikit-learn), R, SQL, VBA.\nTools: Power BI, Tableau, Advanced Excel.\nLanguages: Spanish (Native), English (Fluent)."
   }
 ]
