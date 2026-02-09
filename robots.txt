@@ -1,1 +1,1 @@
-Sitemap: https://wyanesM.github.io/wyanes-website/sitemap.xml
+Sitemap: https://wyanes.com/sitemap.xml
