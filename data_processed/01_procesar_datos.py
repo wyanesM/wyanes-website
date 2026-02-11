@@ -5,7 +5,7 @@ import os
 # --- CONFIGURACIÓN ---
 # Ruta al archivo GIGANTE
 file_path = r"Z:\CENSO_2024\Bases-Finales-CPV2024SV-CSV\BasedeDatosdePoblacionCPV2024SV.csv"
-output_folder = r"C:\Users\wyane\OneDrive\Escritorio\WebPage\data_processed"
+output_folder = r"C:\Users\wyane\OneDrive\Escritorio\WebPage\data_processed\CENSO"
 
 # Crear carpeta si no existe
 os.makedirs(output_folder, exist_ok=True)
@@ -61,39 +61,52 @@ print("🚀 ¡LISTO! Archivos generados en folder 'data_processed'.")
 print("Ahora puedes correr el script de visualización instantáneamente.")
 
 # ==========================================
-# --- NUEVO MÓDULO: EDUCACIÓN E IDIOMA ---
+# --- NUEVO MÓDULO: EDUCACIÓN E IDIOMA (LÓGICA FINAL) ---
 # ==========================================
 print("⚙️ Procesando Módulo de Educación...")
 
-# 1. Definir el Mapeo de Códigos (Basado en tu imagen)
-MAPA_EDUCACION_MACRO = {
-    1: "Ninguno",
-    2: "Inicial", 3: "Inicial",
-    4: "Especial",
-    5: "Básica", 6: "Básica",
-    7: "Media",
-    8: "Superior", 9: "Superior", 10: "Superior", 
-    11: "Superior", 12: "Superior"
-}
+# 1. Definir la Función basada en la IMAGEN P10_1_GRADO_APROBADO
+def clasificar_nivel(valor):
+    try:
+        c = int(valor)
+    except:
+        return "Ignorado"
 
-# 2. Filtrar población apta
-# Excluimos a menores de 4 años para no sesgar la data de "Ninguno"
-# (Asumimos que un niño de 2 años es normal que no tenga grado aprobado)
+    # --- LÓGICA EXACTA SEGÚN TU DICCIONARIO ---
+    if c == 0:
+        return "Ninguno"        # Código 0
+    elif 1 <= c <= 3:
+        return "Inicial"        # Códigos 1, 2, 3 (Parvularia)
+    elif 4 <= c <= 9:
+        return "Especial"       # Códigos 4 al 9 (Educación Especial)
+    elif 11 <= c <= 19:
+        return "Básica"         # Códigos 11 al 19 (1° a 9° Grado)
+    elif 21 <= c <= 29:
+        return "Media"          # Códigos 21 al 24 (Bachillerato)
+    elif c >= 30:
+        return "Superior"       # Series 30 (Técnico), 40 (Univ), 50 (Maestría), 60 (Doctorado)
+    else:
+        return "Ignorado"
+
+# 2. Filtrar y Limpiar
+# Forzamos numérico en EDAD
+df_censo['P02_3_EDAD'] = pd.to_numeric(df_censo['P02_3_EDAD'], errors='coerce')
+# IMPORTANTE: Filtrar niños muy pequeños para no inflar "Ninguno"
 df_educ = df_censo[df_censo['P02_3_EDAD'] >= 4].copy()
 
-# 3. Crear columna de Nivel Simplificado
-df_educ['Nivel_Educativo'] = df_educ['P10_1_GRADO_APROBADO'].map(MAPA_EDUCACION_MACRO).fillna("Ignorado")
+# 3. Aplicar la clasificación
+col_grado = pd.to_numeric(df_educ['P10_1_GRADO_APROBADO'], errors='coerce').fillna(-1)
+df_educ['Nivel_Educativo'] = col_grado.apply(clasificar_nivel)
 
 # 4. Calcular Idioma Inglés
-# Asumimos 1 = Sí (Estándar en censos). Si el código fuera distinto, avísame.
-df_educ['Habla_Ingles'] = df_educ['P12_3_A_ENG'].apply(lambda x: 1 if x == 1 else 0)
+col_ingles = pd.to_numeric(df_educ['P12_3_A_ENG'], errors='coerce')
+df_educ['Habla_Ingles'] = (col_ingles == 1).astype(int)
 
-# 5. Generar Tabla Resumen 1: Nivel Educativo por Departamento
-# Resultado: Ahuachapán | Básica | 5000 personas
+# 5. Generar Tabla Resumen 1: Educación
 resumen_educacion = df_educ.groupby(['DEPTO', 'Nivel_Educativo']).size().reset_index(name='Conteo')
 resumen_educacion['Nombre_Depto'] = resumen_educacion['DEPTO'].map(codigos_deptos)
 
-# 6. Generar Tabla Resumen 2: Inglés por Departamento
+# 6. Generar Tabla Resumen 2: Inglés
 resumen_ingles = df_educ.groupby('DEPTO').agg(
     Poblacion_4plus=('COD_PER', 'count'),
     Hablantes_Ingles=('Habla_Ingles', 'sum')
@@ -102,7 +115,48 @@ resumen_ingles = df_educ.groupby('DEPTO').agg(
 resumen_ingles['Pct_Ingles'] = (resumen_ingles['Hablantes_Ingles'] / resumen_ingles['Poblacion_4plus']) * 100
 resumen_ingles['Nombre_Depto'] = resumen_ingles['DEPTO'].map(codigos_deptos)
 
-# --- GUARDAR LOS NUEVOS ARCHIVOS ---
-print("💾 Guardando archivos de Educación...")
-resumen_educacion.to_csv(f"{output_folder}/resumen_educacion.csv", index=False)
-resumen_ingles.to_csv(f"{output_folder}/resumen_ingles.csv", index=False)
+# --- GUARDAR (Con utf-8-sig para las tildes) ---
+print("💾 Guardando archivos de Educación Corregidos...")
+resumen_educacion.to_csv(f"{output_folder}/resumen_educacion.csv", index=False, encoding='utf-8-sig')
+resumen_ingles.to_csv(f"{output_folder}/resumen_ingles.csv", index=False, encoding='utf-8-sig')
+
+# ==========================================
+# --- MÓDULO: BRECHA DIGITAL COMPLETO ---
+# ==========================================
+print("⚙️ Procesando todas las variables TIC...")
+
+# 1. Filtramos población > 10 años
+df_tic = df_censo[pd.to_numeric(df_censo['P02_3_EDAD'], errors='coerce') >= 10].copy()
+
+# 2. Función de limpieza (1=Sí, resto=0)
+def limpiar_tic(columna):
+    return (pd.to_numeric(columna, errors='coerce') == 1).astype(int)
+
+# Procesamos todas las variables de tus imágenes
+df_tic['Usa_PC']         = limpiar_tic(df_tic['P14_1_USO_TIC_PC'])
+df_tic['Usa_Laptop']     = limpiar_tic(df_tic['P14_2_USO_TIC_LAPTOP'])
+df_tic['Usa_Tablet']     = limpiar_tic(df_tic['P14_3_USO_TIC_TABLET'])
+df_tic['Usa_Smartphone'] = limpiar_tic(df_tic['P14_4_USO_TIC_SMARTPHONE'])
+df_tic['Usa_Cel_Basico'] = limpiar_tic(df_tic['P14_5_USO_TIC_CEL'])
+df_tic['Usa_Internet']   = limpiar_tic(df_tic['P14_6_USO_TIC_INTERNET'])
+
+# 3. Generar Tabla Resumen por Departamento
+resumen_tic = df_tic.groupby('DEPTO').agg(
+    Total_Pob=('COD_PER', 'count'),
+    Internet=('Usa_Internet', 'sum'),
+    Smartphone=('Usa_Smartphone', 'sum'),
+    Laptop=('Usa_Laptop', 'sum'),
+    PC_Escritorio=('Usa_PC', 'sum'),
+    Tablet=('Usa_Tablet', 'sum'),
+    Cel_Basico=('Usa_Cel_Basico', 'sum')
+).reset_index()
+
+# 4. Calcular Porcentajes
+cols_tic = ['Internet', 'Smartphone', 'Laptop', 'PC_Escritorio', 'Tablet', 'Cel_Basico']
+for col in cols_tic:
+    resumen_tic[f'Pct_{col}'] = (resumen_tic[col] / resumen_tic['Total_Pob']) * 100
+
+resumen_tic['Nombre_Depto'] = resumen_tic['DEPTO'].map(codigos_deptos)
+
+# Guardar
+resumen_tic.to_csv(f"{output_folder}/resumen_tic_completo.csv", index=False, encoding='utf-8-sig')
