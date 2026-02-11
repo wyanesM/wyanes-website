@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="William Yanes">
 
-<title>projects – William Yanes</title>
+<title>Análisis del Censo El Salvador 2024 – William Yanes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -40,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ffa9a6279353761231ec249df0a7fdd3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -154,8 +155,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
+  <li><a href="#perfil-demográfico-distribución-nacional" id="toc-perfil-demográfico-distribución-nacional" class="nav-link" data-scroll-target="#perfil-demográfico-distribución-nacional">1. Perfil Demográfico: Distribución Nacional</a></li>
+  <li><a href="#capital-humano-educación-y-bilingüismo" id="toc-capital-humano-educación-y-bilingüismo" class="nav-link" data-scroll-target="#capital-humano-educación-y-bilingüismo">2. Capital Humano: Educación y Bilingüismo</a></li>
+  <li><a href="#la-brecha-digital-conectividad-vs.-productividad" id="toc-la-brecha-digital-conectividad-vs.-productividad" class="nav-link" data-scroll-target="#la-brecha-digital-conectividad-vs.-productividad">3. La Brecha Digital: Conectividad vs.&nbsp;Productividad</a></li>
+  <li><a href="#conclusión-técnica" id="toc-conclusión-técnica" class="nav-link" data-scroll-target="#conclusión-técnica">Conclusión Técnica</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -167,13 +178,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">projects</h1>
+<h1 class="title">Análisis del Censo El Salvador 2024</h1>
+<p class="subtitle lead">Procesamiento de Big Data y Visualización Estratégica</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>William Yanes </p>
+          </div>
+  </div>
     
   
     
@@ -184,8 +202,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </header>
 
 
+<section id="introducción" class="level2">
+<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
+<p>Este informe presenta los hallazgos clave del <strong>Censo de Población y Vivienda 2024</strong>. El análisis se centra en la distribución demográfica, el capital humano y la adopción tecnológica, utilizando microdatos procesados íntegramente con Python.</p>
+<hr>
+</section>
+<section id="perfil-demográfico-distribución-nacional" class="level2">
+<h2 class="anchored" data-anchor-id="perfil-demográfico-distribución-nacional">1. Perfil Demográfico: Distribución Nacional</h2>
+<p>La población de El Salvador asciende a <strong>6.03 millones</strong>, con una marcada concentración en la zona central del país. El siguiente dashboard detalla la distribución geográfica por departamento, la composición por sexo y la estructura de edades (pirámide poblacional).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CENSO2024/dashboard_poblacion.png" class="img-fluid figure-img"></p>
+<figcaption>Distribución Demográfica y Estructura de Edad</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="capital-humano-educación-y-bilingüismo" class="level2">
+<h2 class="anchored" data-anchor-id="capital-humano-educación-y-bilingüismo">2. Capital Humano: Educación y Bilingüismo</h2>
+<p>El capital humano es el motor del desarrollo. Este análisis revela una correlación entre el acceso a la educación superior y el dominio del idioma inglés, destacando a San Salvador y La Libertad como los principales polos de talento calificado.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CENSO2024/dashboard_educacion.png" class="img-fluid figure-img"></p>
+<figcaption>Nivel Educativo y Competencias Lingüísticas</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="la-brecha-digital-conectividad-vs.-productividad" class="level2">
+<h2 class="anchored" data-anchor-id="la-brecha-digital-conectividad-vs.-productividad">3. La Brecha Digital: Conectividad vs.&nbsp;Productividad</h2>
+<p>A pesar de que el acceso a internet supera el 70% en la mayoría de departamentos, existe una brecha crítica en la tenencia de computadoras personales (laptops). Esta disparidad sugiere un alto consumo de contenido digital mediante smartphones, pero un reto pendiente en herramientas de productividad.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CENSO2024/dashboard_digital.png" class="img-fluid figure-img"></p>
+<figcaption>Comparativa de Dispositivos y Conectividad</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="conclusión-técnica" class="level2">
+<h2 class="anchored" data-anchor-id="conclusión-técnica">Conclusión Técnica</h2>
+<p>Este proyecto demuestra un flujo de trabajo de <strong>Ciencia de Datos</strong> eficiente: 1. <strong>Extracción:</strong> Procesamiento de microdatos censales. 2. <strong>Transformación:</strong> Limpieza y normalización de nombres geográficos. 3. <strong>Visualización:</strong> Generación de dashboards estáticos de alta resolución (<code>300 DPI</code>). 4. <strong>Despliegue:</strong> Integración en entorno Quarto para publicación web.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
