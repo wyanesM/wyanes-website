@@ -1,5 +1,7 @@
 project:
   type: website
+  resources: 
+    - CNAME
   output-dir: docs
 
 website:
@@ -12,16 +14,23 @@ website:
         text: Services
       - href: cv.qmd
         text: CV
+      - href: projects.qmd
+        text: Projects
     right:
       - icon: linkedin
-        href: https://www.linkedin.com/
+        href: https://www.linkedin.com/in/wyanes
       - icon: github
         href: https://github.com/wyanesM
       - icon: envelope
         href: mailto:wyanes@wyanes.com
+      - icon: whatsapp
+        href: https://wa.me/50373856891
+        aria-label: "WhatsApp" # Opcional: ayuda a lectores de pantalla
 
 format:
   html:
     theme: flatly
     css: styles.css
     toc: true
+    include-in-header: gtm_head.html
+    include-before-body: gtm_body.html    
