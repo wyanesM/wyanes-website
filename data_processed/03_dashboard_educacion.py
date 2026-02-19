@@ -1,111 +1,117 @@
 # %%
 import pandas as pd
+import geopandas as gpd
 import matplotlib.pyplot as plt
-import seaborn as sns
+import matplotlib.patheffects as pe
 from matplotlib.ticker import FuncFormatter
+import seaborn as sns
+import unicodedata
 import os
 
-# --- 1. CONFIGURACIÓN DE RUTAS ABSOLUTAS ---
+# --- 1. PATH CONFIGURATION ---
 BASE_DIR = r"C:\Users\wyane\OneDrive\Escritorio\WebPage"
-# Ruta donde el Script 01 guarda los CSV
 DATA_DIR = r"C:\Users\wyane\OneDrive\Escritorio\WebPage\data_processed\CENSO"
-# Ruta organizada para imágenes del proyecto
 IMG_DIR = os.path.join(BASE_DIR, "images", "CENSO2024")
 
-# --- 2. CARGA DE DATOS ---
+# --- 2. DATA LOADING ---
 try:
-    path_edu = os.path.join(DATA_DIR, "resumen_educacion.csv")
-    path_eng = os.path.join(DATA_DIR, "resumen_ingles.csv")
+    df_educ = pd.read_csv(os.path.join(DATA_DIR, "resumen_educacion.csv"))
+    df_ingles = pd.read_csv(os.path.join(DATA_DIR, "resumen_ingles.csv"))
     
-    df_edu = pd.read_csv(path_edu)
-    df_eng = pd.read_csv(path_eng)
-    
-    # Capturamos totales nacionales ANTES de limpiar para no perder precisión
-    pob_total_ingles = df_eng['Poblacion_4plus'].sum()
-    hablantes_total = df_eng['Hablantes_Ingles'].sum()
-    
-    print(f"✅ Datos cargados. Población analizada (>4 años): {pob_total_ingles/1e6:.2f}M")
+    # Detección automática de columnas para evitar KeyError
+    col_depto = 'Dept_Name' if 'Dept_Name' in df_ingles.columns else 'Nombre_Depto'
+    col_educ = 'Education_Level' if 'Education_Level' in df_educ.columns else 'Nivel_Educativo'
+    col_count = 'Count' if 'Count' in df_educ.columns else 'Conteo'
+
 except FileNotFoundError as e:
-    print(f"❌ ERROR: No se encuentran los archivos en {DATA_DIR}. {e}")
+    print(f"❌ ERROR: CSV files not found. {e}")
     exit()
 
-# --- 3. LIMPIEZA ---
-# Eliminamos registros sin departamento asignado ('Ignorado' o nulos)
-basura = ['DESCONOCIDO', 'Ignorado', 'nan']
-df_edu = df_edu.dropna(subset=['Nombre_Depto'])
-df_eng = df_eng.dropna(subset=['Nombre_Depto'])
+# --- 3. MAP GEOMETRY ---
+url_mapa = "https://geodata.ucdavis.edu/gadm/gadm4.1/json/gadm41_SLV_1.json"
+gdf_mapa = gpd.read_file(url_mapa)
 
-df_edu = df_edu[~df_edu['Nombre_Depto'].astype(str).isin(basura)]
-df_eng = df_eng[~df_eng['Nombre_Depto'].astype(str).isin(basura)]
+def normalizar(texto):
+    if not isinstance(texto, str): return "SIN_DATO"
+    return unicodedata.normalize('NFKD', texto).encode('ASCII', 'ignore').decode('utf-8').upper().replace(" ", "").strip()
 
-df_edu['Nombre_Depto'] = df_edu['Nombre_Depto'].astype(str)
-df_eng['Nombre_Depto'] = df_eng['Nombre_Depto'].astype(str)
+df_ingles['match_key'] = df_ingles[col_depto].apply(normalizar)
+gdf_mapa['match_key'] = gdf_mapa['NAME_1'].apply(normalizar)
+mapa_final = gdf_mapa.merge(df_ingles, on='match_key', how='left')
 
-# --- 4. PREPARACIÓN DE DATOS ---
-df_pivot = df_edu.pivot(index='Nombre_Depto', columns='Nivel_Educativo', values='Conteo').fillna(0)
+# --- 4. VISUALIZATION ---
+fig = plt.figure(figsize=(24, 14), facecolor='white')
 
-orden_niveles = ['Ninguno', 'Inicial', 'Especial', 'Básica', 'Media', 'Superior', 'Ignorado']
-cols_existentes = [c for c in orden_niveles if c in df_pivot.columns]
-df_pivot = df_pivot[cols_existentes]
-df_pct = df_pivot.div(df_pivot.sum(axis=1), axis=0) * 100
+# === A) MAP (English Proficiency) ===
+ax1 = fig.add_axes([0.02, 0.05, 0.65, 0.88]) 
+mapa_final.plot(column='Pct_Ingles', cmap='Blues', linewidth=0.8, ax=ax1, edgecolor='black')
 
-# Ordenamiento por prioridad (Superior primero)
-prioridad_orden = ['Superior', 'Media', 'Básica', 'Inicial', 'Ninguno']
-cols_sort = [c for c in prioridad_orden if c in df_pct.columns]
-df_pct = df_pct.sort_values(by=cols_sort, ascending=True)
+for idx, row in mapa_final.iterrows():
+    centroid = row['geometry'].representative_point()
+    pct = row['Pct_Ingles']
+    if pd.notna(pct):
+        label_text = f"{row[col_depto]}\n{pct:.1f}%"
+        ax1.annotate(text=label_text, xy=(centroid.x, centroid.y), ha='center', 
+                     fontsize=10, fontweight='bold', color='black',
+                     path_effects=[pe.withStroke(linewidth=2.5, foreground="white")])
 
-# Sincronizar Inglés al mismo orden
-df_eng = df_eng.set_index('Nombre_Depto').reindex(df_pct.index).fillna(0)
+ax1.set_title("ENGLISH PROFICIENCY BY DEPARTMENT (Ages 4+)", fontsize=18, fontweight='bold', pad=10)
+ax1.axis('off')
 
-# --- 5. VISUALIZACIÓN ---
-fig = plt.figure(figsize=(20, 11))
-
-colores_edu = {
-    'Ninguno': '#e74c3c', 'Inicial': '#f1c40f', 'Especial': '#95a5a6',
-    'Básica': '#3498db', 'Media': '#2980b9', 'Superior': '#2ecc71',
-    'Ignorado': '#bdc3c7'
+# === B) STACKED BAR CHART (Education Levels) ===
+# Traducción interna para que la leyenda salga en inglés sin importar el CSV
+educ_map = {
+    'Ninguno': 'None', 'Inicial': 'Preschool', 'Básica': 'Elementary/Middle',
+    'Media': 'High School', 'Superior': 'Higher Education', 'Especial': 'Special Ed',
+    'Ignorado': 'Ignored'
 }
-lista_colores = [colores_edu.get(c, '#333') for c in df_pct.columns]
+df_educ_plot = df_educ.copy()
+df_educ_plot[col_educ] = df_educ_plot[col_educ].replace(educ_map)
 
-ax1 = fig.add_axes([0.08, 0.15, 0.52, 0.72]) 
-ax2 = fig.add_axes([0.65, 0.15, 0.28, 0.72])
+# Pivotar datos
+df_pivot = df_educ_plot.pivot(index=col_depto, columns=col_educ, values=col_count).fillna(0)
 
-# === A) GRÁFICO EDUCACIÓN ===
-df_pct.plot(kind='barh', stacked=True, ax=ax1, color=lista_colores, edgecolor='white', width=0.8)
-ax1.set_title("NIVEL EDUCATIVO ALCANZADO POR DEPARTAMENTO", fontsize=14, fontweight='bold', pad=15)
-ax1.set_xlabel("Distribución de la Población (%)", fontsize=11)
-ax1.set_ylabel("")
-ax1.xaxis.set_major_formatter(FuncFormatter(lambda x, pos: f'{x:.0f}%'))
+# Orden lógico de las columnas (Colores)
+order = ['None', 'Preschool', 'Elementary/Middle', 'High School', 'Higher Education', 'Special Ed', 'Ignored']
+df_pivot = df_pivot[[c for c in order if c in df_pivot.columns]]
 
-for c in ax1.containers:
-    labels = [f'{v.get_width():.1f}%' if v.get_width() > 4 else '' for v in c]
-    ax1.bar_label(c, labels=labels, label_type='center', fontsize=9, color='white', fontweight='bold')
+# Calcular Porcentajes
+df_pivot_pct = df_pivot.div(df_pivot.sum(axis=1), axis=0) * 100
 
-ax1.legend(loc='upper center', bbox_to_anchor=(0.5, -0.12), ncol=4, frameon=False, fontsize=10)
+# --- LÓGICA DE ORDENAMIENTO (Ranking) ---
+# Ordenamos por 'Higher Education' ascendente.
+# Al graficar barh, el último valor queda ARRIBA visualmente.
+if 'Higher Education' in df_pivot_pct.columns:
+    df_pivot_pct = df_pivot_pct.sort_values(by='Higher Education', ascending=True)
+# ----------------------------------------
 
-# === B) GRÁFICO INGLÉS ===
-barras = ax2.barh(df_eng.index, df_eng['Pct_Ingles'], color='#8e44ad', edgecolor='white', height=0.6)
-ax2.set_title("POBLACIÓN BILINGÜE (INGLÉS)", fontsize=14, fontweight='bold', pad=15)
-ax2.set_xlabel("% Habla Inglés", fontsize=11)
-ax2.set_yticks([]) 
-ax2.set_xlim(0, df_eng['Pct_Ingles'].max() * 1.25)
-ax2.bar_label(barras, fmt='%.1f%%', padding=5, fontsize=10, fontweight='bold', color='#8e44ad')
+ax2 = fig.add_axes([0.70, 0.45, 0.25, 0.40])
+df_pivot_pct.plot(kind='barh', stacked=True, ax=ax2, colormap='viridis', edgecolor='white', linewidth=0.5)
 
-# Línea de promedio nacional basada en la cifra oficial real
-if pob_total_ingles > 0:
-    promedio_real = (hablantes_total / pob_total_ingles) * 100
-    ax2.axvline(promedio_real, color='gray', linestyle='--', alpha=0.7)
-    ax2.text(promedio_real, 1.02, f'Promedio Nacional: {promedio_real:.1f}%', color='gray', 
-             fontsize=10, ha='center', transform=ax2.get_xaxis_transform())
+ax2.set_title("EDUCATIONAL ATTAINMENT (%)\n(Sorted by Higher Ed)", fontsize=15, fontweight='bold')
+ax2.set_xlabel("Percentage", fontsize=11)
+ax2.set_ylabel("")
+ax2.legend(title="Level", bbox_to_anchor=(0.5, -0.15), loc='upper center', ncol=3, fontsize=10)
 
-plt.suptitle('RADIOGRAFÍA DE CAPITAL HUMANO: EL SALVADOR 2024', fontsize=22, fontweight='bold', y=0.97)
+# === C) SUMMARY BOX ===
+ax3 = fig.add_axes([0.70, 0.10, 0.25, 0.25])
+total_pob_4 = df_ingles['Poblacion_4plus'].sum()
+total_eng = df_ingles['Hablantes_Ingles'].sum()
+avg_eng = (total_eng / total_pob_4) * 100
 
-# --- 6. GUARDADO ORGANIZADO ---
+# Ajuste fino de coordenadas de texto para evitar solapamiento
+ax3.text(0.5, 0.55, f"{avg_eng:.1f}%", fontsize=50, fontweight='bold', ha='center', color='#2b6cb0')
+ax3.text(0.5, 0.25, "National English\nProficiency Average", fontsize=14, ha='center', fontweight='bold')
+ax3.text(0.5, 0.10, f"Total Speakers: {total_eng/1e3:.1f}K", fontsize=12, ha='center', color='gray')
+ax3.axis('off')
+
+plt.suptitle('HUMAN CAPITAL DASHBOARD: EDUCATION & LANGUAGES (2024)', fontsize=28, fontweight='bold', y=0.97)
+
+# --- 5. SAVING ---
 if not os.path.exists(IMG_DIR):
     os.makedirs(IMG_DIR)
+save_path = os.path.join(IMG_DIR, "dashboard_education_en.png")
+fig.savefig(save_path, dpi=400, bbox_inches='tight')
 
-save_path = os.path.join(IMG_DIR, "dashboard_educacion.png")
-fig.savefig(save_path, dpi=300, bbox_inches='tight')
-print(f"✅ Dashboard de Educación guardado en:\n{save_path}")
-
+print(f"✅ Dashboard saved in: {save_path}")
 plt.show()
