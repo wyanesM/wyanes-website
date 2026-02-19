@@ -96,5 +96,12 @@
     "title": "2024 El Salvador Census Analysis",
     "section": "Technical Conclusion",
     "text": "Technical Conclusion\nThis project demonstrates an end-to-end Data Science workflow designed for high-stakes decision making:\n\nExtraction: High-volume processing of raw census microdata.\nTransformation: Data cleaning and normalization of geographic entities.\nVisualization: Generation of high-resolution static dashboards (400 DPI) for executive reporting.\nDeployment: Integration into a Quarto environment for professional web publishing."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Portafolio de Proyectos",
+    "section": "",
+    "text": "Análisis del Censo El Salvador 2024\n\n\nBig Data & Visualización Estratégica\n\n\nProcesamiento de 6 millones de registros para revelar insights demográficos y de capital humano.\n\n\n\nFeb 18, 2026\n\n\n\n\n\n\nNo matching items\n\n\n\n\nNo matching items"
   }
 ]
