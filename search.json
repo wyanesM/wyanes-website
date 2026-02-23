@@ -30,35 +30,35 @@
   {
     "objectID": "posts/censo.html#introduction",
     "href": "posts/censo.html#introduction",
-    "title": "Análisis del Censo El Salvador 2024",
+    "title": "2024 El Salvador Census Analysis",
     "section": "Introduction",
     "text": "Introduction\nThis report presents key findings from the 2024 Population and Housing Census. The analysis focuses on demographic distribution, human capital, and digital adoption, leveraging microdata processed entirely with Python and R."
   },
   {
     "objectID": "posts/censo.html#demographic-profile-national-distribution",
     "href": "posts/censo.html#demographic-profile-national-distribution",
-    "title": "Análisis del Censo El Salvador 2024",
+    "title": "2024 El Salvador Census Analysis",
     "section": "1. Demographic Profile: National Distribution",
     "text": "1. Demographic Profile: National Distribution\nEl Salvador’s population stands at 6.03 million, with a significant concentration in the country’s central region. The following dashboard details the geographic distribution by department, gender composition, and age structure (population pyramid).\n\n\n\nDemographic Distribution and Age Structure"
   },
   {
     "objectID": "posts/censo.html#human-capital-education-bilingualism",
     "href": "posts/censo.html#human-capital-education-bilingualism",
-    "title": "Análisis del Censo El Salvador 2024",
+    "title": "2024 El Salvador Census Analysis",
     "section": "2. Human Capital: Education & Bilingualism",
     "text": "2. Human Capital: Education & Bilingualism\nHuman capital is the engine of economic development. This analysis reveals a clear correlation between access to higher education and English language proficiency, highlighting San Salvador and La Libertad as the primary hubs for highly skilled talent.\n\n\n\nEducational Attainment and Language Proficiency"
   },
   {
     "objectID": "posts/censo.html#the-digital-divide-connectivity-vs.-productivity",
     "href": "posts/censo.html#the-digital-divide-connectivity-vs.-productivity",
-    "title": "Análisis del Censo El Salvador 2024",
+    "title": "2024 El Salvador Census Analysis",
     "section": "3. The Digital Divide: Connectivity vs. Productivity",
     "text": "3. The Digital Divide: Connectivity vs. Productivity\nWhile internet access exceeds 70% in most departments, a critical gap remains in personal computer (laptop) ownership. This disparity suggests high digital consumption via smartphones, but poses a challenge for desktop-based productivity and specialized technical work.\n\n\n\nDevice Comparison and Digital Connectivity"
   },
   {
     "objectID": "posts/censo.html#technical-conclusion",
     "href": "posts/censo.html#technical-conclusion",
-    "title": "Análisis del Censo El Salvador 2024",
+    "title": "2024 El Salvador Census Analysis",
     "section": "Technical Conclusion",
     "text": "Technical Conclusion\nThis project demonstrates an end-to-end Data Science workflow designed for high-stakes decision making:\n\nExtraction: High-volume processing of raw census microdata.\nTransformation: Data cleaning and normalization of geographic entities.\nVisualization: Generation of high-resolution static dashboards (400 DPI) for executive reporting.\nDeployment: Integration into a Quarto environment for professional web publishing."
   },
@@ -102,6 +102,6 @@
     "href": "projects.html",
     "title": "Portafolio de Proyectos",
     "section": "",
-    "text": "Análisis del Censo El Salvador 2024\n\n\nBig Data & Visualización Estratégica\n\n\nProcesamiento de 6 millones de registros para revelar insights demográficos y de capital humano.\n\n\n\nFeb 18, 2026\n\n\n\n\n\n\nNo matching items\n\n\n\n\nNo matching items"
+    "text": "2024 El Salvador Census Analysis\n\n\nBig Data & Strategic Visualization\n\n\nProcessing 6 million records to uncover demographic and human capital insights.\n\n\n\nFeb 18, 2026\n\n\n\n\n\n\nNo matching items\n\n\n\n\nNo matching items"
   }
 ]
