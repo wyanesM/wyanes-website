@@ -4,7 +4,7 @@ subtitle: "Big Data & Visualización Estratégica"
 description: "Procesamiento de 6 millones de registros para revelar insights demográficos y de capital humano."
 date: "2026-02-18"
 categories: ["Censo", "Python"]  # <--- Esta etiqueta es la que usa el filtro
-image: ../images/CENSO2024/dashboard_poblacion_en.png # Nota los dos puntos ".." para salir de la carpeta posts
+image: "../images/CENSO2024/dashboard_poblacion_en.png" # Nota los dos puntos ".." para salir de la carpeta posts
 format:
   html:
     toc: true
