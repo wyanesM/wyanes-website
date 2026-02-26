@@ -1,0 +1,107 @@
+[
+  {
+    "objectID": "services.html",
+    "href": "services.html",
+    "title": "Consulting Services",
+    "section": "",
+    "text": "I help organizations bridge the gap between traditional finance and modern data science."
+  },
+  {
+    "objectID": "services.html#financial-planning-analysis-fpa",
+    "href": "services.html#financial-planning-analysis-fpa",
+    "title": "Consulting Services",
+    "section": "📊 Financial Planning & Analysis (FP&A)",
+    "text": "📊 Financial Planning & Analysis (FP&A)\nMove beyond static spreadsheets. * Dynamic Budgeting: Automated forecasting models using Python/R. * Variance Analysis: Deep-dive investigations into P&L deviations. * Unit Economics: Calculation of CAC, LTV, and Churn metrics."
+  },
+  {
+    "objectID": "services.html#process-automation",
+    "href": "services.html#process-automation",
+    "title": "Consulting Services",
+    "section": "🤖 Process Automation",
+    "text": "🤖 Process Automation\nReduce manual work and errors in your finance team. * Report Automation: Scripts to generate daily/weekly financial reports automatically. * Data Cleaning: Transforming messy raw data into analysis-ready formats."
+  },
+  {
+    "objectID": "services.html#business-intelligence",
+    "href": "services.html#business-intelligence",
+    "title": "Consulting Services",
+    "section": "📈 Business Intelligence",
+    "text": "📈 Business Intelligence\n\nDashboards: Custom Power BI or Tableau dashboards for executive decision-making.\nKPI Definition: Identifying and tracking the metrics that actually matter.\n\n\n\n\n\n\n\nTipLet’s Connect\n\n\n\nReady to upgrade your financial strategy? Email me to discuss a project."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "William Yanes",
+    "section": "",
+    "text": "&lt;iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-W6R723MF\" height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&gt;&lt;/iframe&gt;\n\nTransforming Data into Financial Strategy\nI am a highly organized Finance Professional with over **10 years of experience** bridging the gap between traditional **Financial Planning & Analysis (FP&A)** and modern **Data Science**.\nMy expertise lies in building robust financial models, ensuring internal controls (SOX/IFRS), and leveraging predictive modeling to drive strategic decision-making.\n\n\n\n\n\n\nNoteOpen for Consulting\n\n\n\nI am currently accepting new projects for financial modeling and data analysis."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "Curriculum Vitae",
+    "section": "Education",
+    "text": "Education\nMaster’s in Statistics and Data Science | Universidad El Salvador Completed 2025\nBusiness Engineering | Escuela Superior de Economía y Negocios (ESEN) January 2016"
+  },
+  {
+    "objectID": "cv.html#professional-experience",
+    "href": "cv.html#professional-experience",
+    "title": "Curriculum Vitae",
+    "section": "Professional Experience",
+    "text": "Professional Experience\n\nOutsourcing Services International S.A de C.V\nFP&A Specialist | Nov 2025 - Present\n\nActing as a strategic partner to Executive Leadership, delivering robust financial statement projections.\nLeading the monthly performance review process to provide visibility into financial results.\nEnsuring the accuracy of complex financial models used for the company’s strategic roadmap.\n\n\n\nLifeMiles (Avianca Loyalty)\nFP&A Manager (Acting) | Aug 2025 - Nov 2025\n\nOversaw financial performance of the Loyalty segment and delivered detailed variance analysis.\nLed the budgeting and forecasting process, coordinating cross-functional inputs.\n\nFinancial Control Leader | Apr 2020 - July 2025\n\nManaged the “Breakage” revenue driver (~16% of revenue), a critical SOX control.\nModeled sensitivity scenarios where a 1 ppt deviation could impact annual revenue by ~$27M.\nReduced accounting errors by 10%, generating annual savings of $900K+.\n\nFinancial Analyst | Sept 2016 - Mar 2020\n\nMastered corporate finance fundamentals, executing rigorous P&L analysis.\nDeveloped dynamic financial models to support monthly forecasting."
+  },
+  {
+    "objectID": "cv.html#technical-skills",
+    "href": "cv.html#technical-skills",
+    "title": "Curriculum Vitae",
+    "section": "Technical Skills",
+    "text": "Technical Skills\n\nProgramming: Python (Pandas, Scikit-learn), R, SQL, VBA.\nTools: Power BI, Tableau, Advanced Excel.\nLanguages: Spanish (Native), English (Fluent)."
+  },
+  {
+    "objectID": "projects.html#introduction",
+    "href": "projects.html#introduction",
+    "title": "2024 El Salvador Census Analysis",
+    "section": "Introduction",
+    "text": "Introduction\nThis report presents key findings from the 2024 Population and Housing Census. The analysis focuses on demographic distribution, human capital, and digital adoption, leveraging microdata processed entirely with Python and R."
+  },
+  {
+    "objectID": "projects.html#demographic-profile-national-distribution",
+    "href": "projects.html#demographic-profile-national-distribution",
+    "title": "2024 El Salvador Census Analysis",
+    "section": "1. Demographic Profile: National Distribution",
+    "text": "1. Demographic Profile: National Distribution\nEl Salvador’s population stands at 6.03 million, with a significant concentration in the country’s central region. The following dashboard details the geographic distribution by department, gender composition, and age structure (population pyramid).\n\n\n\nDemographic Distribution and Age Structure"
+  },
+  {
+    "objectID": "projects.html#human-capital-education-bilingualism",
+    "href": "projects.html#human-capital-education-bilingualism",
+    "title": "2024 El Salvador Census Analysis",
+    "section": "2. Human Capital: Education & Bilingualism",
+    "text": "2. Human Capital: Education & Bilingualism\nHuman capital is the engine of economic development. This analysis reveals a clear correlation between access to higher education and English language proficiency, highlighting San Salvador and La Libertad as the primary hubs for highly skilled talent.\n\n\n\nEducational Attainment and Language Proficiency"
+  },
+  {
+    "objectID": "projects.html#the-digital-divide-connectivity-vs.-productivity",
+    "href": "projects.html#the-digital-divide-connectivity-vs.-productivity",
+    "title": "2024 El Salvador Census Analysis",
+    "section": "3. The Digital Divide: Connectivity vs. Productivity",
+    "text": "3. The Digital Divide: Connectivity vs. Productivity\nWhile internet access exceeds 70% in most departments, a critical gap remains in personal computer (laptop) ownership. This disparity suggests high digital consumption via smartphones, but poses a challenge for desktop-based productivity and specialized technical work.\n\n\n\nDevice Comparison and Digital Connectivity"
+  },
+  {
+    "objectID": "projects.html#technical-conclusion",
+    "href": "projects.html#technical-conclusion",
+    "title": "2024 El Salvador Census Analysis",
+    "section": "Technical Conclusion",
+    "text": "Technical Conclusion\nThis project demonstrates an end-to-end Data Science workflow designed for high-stakes decision making:\n\nExtraction: High-volume processing of raw census microdata.\nTransformation: Data cleaning and normalization of geographic entities.\nVisualization: Generation of high-resolution static dashboards (400 DPI) for executive reporting.\nDeployment: Integration into a Quarto environment for professional web publishing."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Portafolio de Proyectos",
+    "section": "",
+    "text": "Análisis del Censo El Salvador 2024\n\n\nBig Data & Visualización Estratégica\n\n\nProcesamiento de 6 millones de registros para revelar insights demográficos y de capital humano.\n\n\n\nFeb 18, 2026\n\n\n\n\n\n\nNo matching items\n\n\n\n\nNo matching items"
+  }
+]

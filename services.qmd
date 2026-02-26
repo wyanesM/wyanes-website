@@ -1,0 +1,25 @@
+---
+title: "Consulting Services"
+---
+
+I help organizations bridge the gap between traditional finance and modern data science.
+
+## 📊 Financial Planning & Analysis (FP&A)
+Move beyond static spreadsheets.
+* **Dynamic Budgeting:** Automated forecasting models using Python/R.
+* **Variance Analysis:** Deep-dive investigations into P&L deviations.
+* **Unit Economics:** Calculation of CAC, LTV, and Churn metrics.
+
+## 🤖 Process Automation
+Reduce manual work and errors in your finance team.
+* **Report Automation:** Scripts to generate daily/weekly financial reports automatically.
+* **Data Cleaning:** Transforming messy raw data into analysis-ready formats.
+
+## 📈 Business Intelligence
+* **Dashboards:** Custom Power BI or Tableau dashboards for executive decision-making.
+* **KPI Definition:** Identifying and tracking the metrics that actually matter.
+
+::: {.callout-tip}
+## Let's Connect
+Ready to upgrade your financial strategy? [Email me](mailto:wyanes@wyanes.com) to discuss a project.
+:::

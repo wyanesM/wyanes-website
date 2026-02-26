@@ -1,0 +1,50 @@
+---
+title: "Curriculum Vitae"
+format:
+  html:
+    toc: true
+---
+
+## Education
+
+**Master's in Statistics and Data Science** | Universidad El Salvador
+*Completed 2025*
+
+**Business Engineering** | Escuela Superior de Economía y Negocios (ESEN)
+*January 2016*
+
+---
+
+## Professional Experience
+
+### **Outsourcing Services International S.A de C.V**
+**FP&A Specialist** | *Nov 2025 - Present*
+
+* Acting as a strategic partner to Executive Leadership, delivering robust financial statement projections.
+* Leading the monthly performance review process to provide visibility into financial results.
+* Ensuring the accuracy of complex financial models used for the company's strategic roadmap.
+
+### **LifeMiles (Avianca Loyalty)**
+**FP&A Manager (Acting)** | *Aug 2025 - Nov 2025*
+
+* Oversaw financial performance of the Loyalty segment and delivered detailed variance analysis.
+* Led the budgeting and forecasting process, coordinating cross-functional inputs.
+
+**Financial Control Leader** | *Apr 2020 - July 2025*
+
+* Managed the "Breakage" revenue driver (~16% of revenue), a critical SOX control.
+* Modeled sensitivity scenarios where a 1 ppt deviation could impact annual revenue by ~$27M.
+* Reduced accounting errors by **10%**, generating annual savings of **$900K+**.
+
+**Financial Analyst** | *Sept 2016 - Mar 2020*
+
+* Mastered corporate finance fundamentals, executing rigorous P&L analysis.
+* Developed dynamic financial models to support monthly forecasting.
+
+---
+
+## Technical Skills
+
+* **Programming:** Python (Pandas, Scikit-learn), R, SQL, VBA.
+* **Tools:** Power BI, Tableau, Advanced Excel.
+* **Languages:** Spanish (Native), English (Fluent).

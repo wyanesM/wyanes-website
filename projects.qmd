@@ -1,0 +1,19 @@
+---
+title: "Portafolio de Proyectos"
+listing:
+  - id: censo-projects
+    contents: posts
+    include:
+      categories: "Censo"
+    type: grid                  # Grid para lo visual (Mapas)
+    sort: "date desc"
+    fields: [image, date, title, subtitle, description]
+    
+  - id: finance-projects
+    contents: posts
+    include:
+      categories: "Finanzas"
+    type: default               # <--- CAMBIO AQUÍ: 'default' es la lista elegante
+    sort: "date desc"
+    fields: [date, title, description]
+---

@@ -1,0 +1,51 @@
+---
+title: "Análisis del Censo El Salvador 2024"
+subtitle: "Big Data & Visualización Estratégica"
+description: "Procesamiento de 6 millones de registros para revelar insights demográficos y de capital humano."
+date: "2026-02-18"
+categories: ["Censo", "Python"]  # <--- Esta etiqueta es la que usa el filtro
+#image: "../images/CENSO2024/dashboard_poblacion_en.png" # Nota los dos puntos ".." para salir de la carpeta posts
+format:
+  html:
+    toc: true
+    code-fold: true
+---
+
+## Introduction
+
+This report presents key findings from the **2024 Population and Housing Census**. The analysis focuses on demographic distribution, human capital, and digital adoption, leveraging microdata processed entirely with Python and R.
+
+---
+
+## 1. Demographic Profile: National Distribution
+
+El Salvador's population stands at **6.03 million**, with a significant concentration in the country's central region. The following dashboard details the geographic distribution by department, gender composition, and age structure (population pyramid).
+
+![Demographic Distribution and Age Structure](images/CENSO2024/dashboard_population_en.png)
+
+---
+
+## 2. Human Capital: Education & Bilingualism
+
+Human capital is the engine of economic development. This analysis reveals a clear correlation between access to higher education and English language proficiency, highlighting San Salvador and La Libertad as the primary hubs for highly skilled talent.
+
+![Educational Attainment and Language Proficiency](images/CENSO2024/dashboard_education_en.png)
+
+---
+
+## 3. The Digital Divide: Connectivity vs. Productivity
+
+While internet access exceeds 70% in most departments, a critical gap remains in personal computer (laptop) ownership. This disparity suggests high digital consumption via smartphones, but poses a challenge for desktop-based productivity and specialized technical work.
+
+![Device Comparison and Digital Connectivity](images/CENSO2024/dashboard_digital_en.png)
+
+---
+
+## Technical Conclusion
+
+This project demonstrates an end-to-end **Data Science** workflow designed for high-stakes decision making:
+
+1. **Extraction:** High-volume processing of raw census microdata.
+2. **Transformation:** Data cleaning and normalization of geographic entities.
+3. **Visualization:** Generation of high-resolution static dashboards (`400 DPI`) for executive reporting.
+4. **Deployment:** Integration into a Quarto environment for professional web publishing.
