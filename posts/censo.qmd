@@ -1,7 +1,7 @@
 ---
-title: "Análisis del Censo El Salvador 2024"
-subtitle: "Big Data & Visualización Estratégica"
-description: "Procesamiento de 6 millones de registros para revelar insights demográficos y de capital humano."
+title: "2024 El Salvador Census Analysis"
+subtitle: "Big Data & Strategic Visualization"
+description: "Processing 6 million records to uncover demographic and human capital insights."
 date: "2026-02-18"
 categories: ["Censo", "Python"]  # <--- Esta etiqueta es la que usa el filtro
 #image: "../images/CENSO2024/dashboard_poblacion_en.png" # Nota los dos puntos ".." para salir de la carpeta posts
@@ -21,7 +21,7 @@ This report presents key findings from the **2024 Population and Housing Census*
 
 El Salvador's population stands at **6.03 million**, with a significant concentration in the country's central region. The following dashboard details the geographic distribution by department, gender composition, and age structure (population pyramid).
 
-![Demographic Distribution and Age Structure](images/CENSO2024/dashboard_population_en.png)
+![Demographic Distribution and Age Structure](../images/CENSO2024/dashboard_population_en.png)
 
 ---
 
@@ -29,7 +29,7 @@ El Salvador's population stands at **6.03 million**, with a significant concentr
 
 Human capital is the engine of economic development. This analysis reveals a clear correlation between access to higher education and English language proficiency, highlighting San Salvador and La Libertad as the primary hubs for highly skilled talent.
 
-![Educational Attainment and Language Proficiency](images/CENSO2024/dashboard_education_en.png)
+![Educational Attainment and Language Proficiency](../images/CENSO2024/dashboard_education_en.png)
 
 ---
 
@@ -37,7 +37,7 @@ Human capital is the engine of economic development. This analysis reveals a cle
 
 While internet access exceeds 70% in most departments, a critical gap remains in personal computer (laptop) ownership. This disparity suggests high digital consumption via smartphones, but poses a challenge for desktop-based productivity and specialized technical work.
 
-![Device Comparison and Digital Connectivity](images/CENSO2024/dashboard_digital_en.png)
+![Device Comparison and Digital Connectivity](../images/CENSO2024/dashboard_digital_en.png)
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Portafolio de Proyectos"
+title: "Portafolio"
 listing:
   - id: censo-projects
     contents: posts
@@ -17,3 +17,4 @@ listing:
     sort: "date desc"
     fields: [date, title, description]
 ---
+

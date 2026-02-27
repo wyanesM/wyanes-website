@@ -28,18 +28,39 @@
     "text": "📈 Business Intelligence\n\nDashboards: Custom Power BI or Tableau dashboards for executive decision-making.\nKPI Definition: Identifying and tracking the metrics that actually matter.\n\n\n\n\n\n\n\nTipLet’s Connect\n\n\n\nReady to upgrade your financial strategy? Email me to discuss a project."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "William Yanes",
-    "section": "",
-    "text": "&lt;iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-W6R723MF\" height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&gt;&lt;/iframe&gt;\n\nTransforming Data into Financial Strategy\nI am a highly organized Finance Professional with over **10 years of experience** bridging the gap between traditional **Financial Planning & Analysis (FP&A)** and modern **Data Science**.\nMy expertise lies in building robust financial models, ensuring internal controls (SOX/IFRS), and leveraging predictive modeling to drive strategic decision-making.\n\n\n\n\n\n\nNoteOpen for Consulting\n\n\n\nI am currently accepting new projects for financial modeling and data analysis."
+    "objectID": "posts/censo.html#introduction",
+    "href": "posts/censo.html#introduction",
+    "title": "2024 El Salvador Census Analysis",
+    "section": "Introduction",
+    "text": "Introduction\nThis report presents key findings from the 2024 Population and Housing Census. The analysis focuses on demographic distribution, human capital, and digital adoption, leveraging microdata processed entirely with Python and R."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "objectID": "posts/censo.html#demographic-profile-national-distribution",
+    "href": "posts/censo.html#demographic-profile-national-distribution",
+    "title": "2024 El Salvador Census Analysis",
+    "section": "1. Demographic Profile: National Distribution",
+    "text": "1. Demographic Profile: National Distribution\nEl Salvador’s population stands at 6.03 million, with a significant concentration in the country’s central region. The following dashboard details the geographic distribution by department, gender composition, and age structure (population pyramid).\n\n\n\nDemographic Distribution and Age Structure"
+  },
+  {
+    "objectID": "posts/censo.html#human-capital-education-bilingualism",
+    "href": "posts/censo.html#human-capital-education-bilingualism",
+    "title": "2024 El Salvador Census Analysis",
+    "section": "2. Human Capital: Education & Bilingualism",
+    "text": "2. Human Capital: Education & Bilingualism\nHuman capital is the engine of economic development. This analysis reveals a clear correlation between access to higher education and English language proficiency, highlighting San Salvador and La Libertad as the primary hubs for highly skilled talent.\n\n\n\nEducational Attainment and Language Proficiency"
+  },
+  {
+    "objectID": "posts/censo.html#the-digital-divide-connectivity-vs.-productivity",
+    "href": "posts/censo.html#the-digital-divide-connectivity-vs.-productivity",
+    "title": "2024 El Salvador Census Analysis",
+    "section": "3. The Digital Divide: Connectivity vs. Productivity",
+    "text": "3. The Digital Divide: Connectivity vs. Productivity\nWhile internet access exceeds 70% in most departments, a critical gap remains in personal computer (laptop) ownership. This disparity suggests high digital consumption via smartphones, but poses a challenge for desktop-based productivity and specialized technical work.\n\n\n\nDevice Comparison and Digital Connectivity"
+  },
+  {
+    "objectID": "posts/censo.html#technical-conclusion",
+    "href": "posts/censo.html#technical-conclusion",
+    "title": "2024 El Salvador Census Analysis",
+    "section": "Technical Conclusion",
+    "text": "Technical Conclusion\nThis project demonstrates an end-to-end Data Science workflow designed for high-stakes decision making:\n\nExtraction: High-volume processing of raw census microdata.\nTransformation: Data cleaning and normalization of geographic entities.\nVisualization: Generation of high-resolution static dashboards (400 DPI) for executive reporting.\nDeployment: Integration into a Quarto environment for professional web publishing."
   },
   {
     "objectID": "cv.html#education",
@@ -63,45 +84,24 @@
     "text": "Technical Skills\n\nProgramming: Python (Pandas, Scikit-learn), R, SQL, VBA.\nTools: Power BI, Tableau, Advanced Excel.\nLanguages: Spanish (Native), English (Fluent)."
   },
   {
-    "objectID": "projects.html#introduction",
-    "href": "projects.html#introduction",
-    "title": "2024 El Salvador Census Analysis",
-    "section": "Introduction",
-    "text": "Introduction\nThis report presents key findings from the 2024 Population and Housing Census. The analysis focuses on demographic distribution, human capital, and digital adoption, leveraging microdata processed entirely with Python and R."
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "projects.html#demographic-profile-national-distribution",
-    "href": "projects.html#demographic-profile-national-distribution",
-    "title": "2024 El Salvador Census Analysis",
-    "section": "1. Demographic Profile: National Distribution",
-    "text": "1. Demographic Profile: National Distribution\nEl Salvador’s population stands at 6.03 million, with a significant concentration in the country’s central region. The following dashboard details the geographic distribution by department, gender composition, and age structure (population pyramid).\n\n\n\nDemographic Distribution and Age Structure"
-  },
-  {
-    "objectID": "projects.html#human-capital-education-bilingualism",
-    "href": "projects.html#human-capital-education-bilingualism",
-    "title": "2024 El Salvador Census Analysis",
-    "section": "2. Human Capital: Education & Bilingualism",
-    "text": "2. Human Capital: Education & Bilingualism\nHuman capital is the engine of economic development. This analysis reveals a clear correlation between access to higher education and English language proficiency, highlighting San Salvador and La Libertad as the primary hubs for highly skilled talent.\n\n\n\nEducational Attainment and Language Proficiency"
-  },
-  {
-    "objectID": "projects.html#the-digital-divide-connectivity-vs.-productivity",
-    "href": "projects.html#the-digital-divide-connectivity-vs.-productivity",
-    "title": "2024 El Salvador Census Analysis",
-    "section": "3. The Digital Divide: Connectivity vs. Productivity",
-    "text": "3. The Digital Divide: Connectivity vs. Productivity\nWhile internet access exceeds 70% in most departments, a critical gap remains in personal computer (laptop) ownership. This disparity suggests high digital consumption via smartphones, but poses a challenge for desktop-based productivity and specialized technical work.\n\n\n\nDevice Comparison and Digital Connectivity"
-  },
-  {
-    "objectID": "projects.html#technical-conclusion",
-    "href": "projects.html#technical-conclusion",
-    "title": "2024 El Salvador Census Analysis",
-    "section": "Technical Conclusion",
-    "text": "Technical Conclusion\nThis project demonstrates an end-to-end Data Science workflow designed for high-stakes decision making:\n\nExtraction: High-volume processing of raw census microdata.\nTransformation: Data cleaning and normalization of geographic entities.\nVisualization: Generation of high-resolution static dashboards (400 DPI) for executive reporting.\nDeployment: Integration into a Quarto environment for professional web publishing."
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "William Yanes",
+    "section": "",
+    "text": "&lt;iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-W6R723MF\" height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&gt;&lt;/iframe&gt;\n\nTransforming Data into Financial Strategy\nI am a highly organized Finance Professional with over **10 years of experience** bridging the gap between traditional **Financial Planning & Analysis (FP&A)** and modern **Data Science**.\nMy expertise lies in building robust financial models, ensuring internal controls (SOX/IFRS), and leveraging predictive modeling to drive strategic decision-making.\n\n\n\n\n\n\nNoteOpen for Consulting\n\n\n\nI am currently accepting new projects for financial modeling and data analysis."
   },
   {
     "objectID": "projects.html",
     "href": "projects.html",
-    "title": "Portafolio de Proyectos",
+    "title": "Portafolio",
     "section": "",
-    "text": "Análisis del Censo El Salvador 2024\n\n\nBig Data & Visualización Estratégica\n\n\nProcesamiento de 6 millones de registros para revelar insights demográficos y de capital humano.\n\n\n\nFeb 18, 2026\n\n\n\n\n\n\nNo matching items\n\n\n\n\nNo matching items"
+    "text": "2024 El Salvador Census Analysis\n\n\nBig Data & Strategic Visualization\n\n\nProcessing 6 million records to uncover demographic and human capital insights.\n\n\n\nFeb 18, 2026\n\n\n\n\n\n\nNo matching items\n\n\n\n\nNo matching items"
   }
 ]
